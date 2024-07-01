@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhbmymmkmkd8m"]
+
+[ext_resource type="PackedScene" uid="uid://clcgyl7ynxu40" path="res://addons/F00F.Core/Common/UI/Stats/Stats.tscn" id="1_1yq41"]
+[ext_resource type="Script" path="res://Tests/Options.cs" id="2_tux5o"]
+
+[node name="Options" instance=ExtResource("1_1yq41")]
+offset_right = 247.0
+offset_bottom = 148.0
+script = ExtResource("2_tux5o")
+
+[node name="Scroll" parent="Panel/Margin/Layout" index="0"]
+custom_minimum_size = Vector2(225, 128)
+
+[editable path="Panel/Margin/Layout/Scroll"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://um4ei8y867kh"]
+
+[ext_resource type="Script" path="res://Tests/Floor.cs" id="1_6c6cw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2d0jl"]
+rough = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n51nw"]
+albedo_color = Color(0, 0.278431, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s845i"]
+material = SubResource("StandardMaterial3D_n51nw")
+size = Vector2(25, 25)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dm5xy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rarq1"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5v8fr"]
+plane = Plane(-1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mxodu"]
+plane = Plane(0, 0, -1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8622c"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v4j"]
+plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="PrismMesh" id="PrismMesh_o7ook"]
+left_to_right = 2.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qdoyt"]
+points = PackedVector3Array(1.5, 0.5, 0.5, 1.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Floor" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_2d0jl")
+script = ExtResource("1_6c6cw")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_s845i")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_dm5xy")
+
+[node name="Walls" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_rarq1")
+
+[node name="Wall_X" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_5v8fr")
+
+[node name="Wall_Z" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.5)
+shape = SubResource("WorldBoundaryShape3D_mxodu")
+
+[node name="Wall_NX" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_8622c")
+
+[node name="Wall_NZ" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.5)
+shape = SubResource("WorldBoundaryShape3D_g4v4j")
+
+[node name="Ramp" type="StaticBody3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0.5, -3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ramp"]
+mesh = SubResource("PrismMesh_o7ook")
+
+[node name="Shape" type="CollisionShape3D" parent="Ramp"]
+shape = SubResource("ConvexPolygonShape3D_qdoyt")

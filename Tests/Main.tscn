@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://25cs60ckhdhh"]
+
+[ext_resource type="Script" path="res://Tests/Main.cs" id="1_etjyx"]
+[ext_resource type="PackedScene" uid="uid://bds7513d0ag58" path="res://addons/F00F.Core/Game3D.tscn" id="1_n28el"]
+[ext_resource type="PackedScene" uid="uid://dc7jd6axtkthi" path="res://Tests/Settings.tscn" id="4_0wsou"]
+[ext_resource type="PackedScene" uid="uid://c0vitva3d6a06" path="res://Tests/Vehicles.tscn" id="6_bkwa6"]
+[ext_resource type="PackedScene" uid="uid://um4ei8y867kh" path="res://Tests/Floor.tscn" id="6_erp8n"]
+[ext_resource type="PackedScene" uid="uid://bhbmymmkmkd8m" path="res://Tests/Options.tscn" id="6_x036a"]
+
+[node name="Root" instance=ExtResource("1_n28el")]
+script = ExtResource("1_etjyx")
+
+[node name="Camera" parent="." index="1"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7, 2, 4.5)
+
+[node name="Floor" parent="." index="3" instance=ExtResource("6_erp8n")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Settings" parent="." index="4" instance=ExtResource("4_0wsou")]
+
+[node name="Options" parent="." index="5" instance=ExtResource("6_x036a")]
+
+[node name="Vehicles" parent="." index="6" instance=ExtResource("6_bkwa6")]
