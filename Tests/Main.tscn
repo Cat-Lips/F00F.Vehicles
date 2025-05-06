@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://kaopyp7te27u"]
+
+[ext_resource type="PackedScene" uid="uid://4434sxtrhcct" path="res://addons/F00F.Core/TestTools/Test3D.tscn" id="1_42rl4"]
+[ext_resource type="Script" uid="uid://wlgmlnnrqarm" path="res://Tests/Main.cs" id="2_buqsw"]
+[ext_resource type="PackedScene" uid="uid://dn04g4f3x25pd" path="res://addons/F00F.ShaderTerrain/Terrain.tscn" id="4_fherg"]
+[ext_resource type="PackedScene" uid="uid://c3kms37vq8efq" path="res://Tests/Track/TrackEditor.tscn" id="4_vllis"]
+
+[node name="Root" instance=ExtResource("1_42rl4")]
+script = ExtResource("2_buqsw")
+
+[node name="Terrain" parent="." index="5" instance=ExtResource("4_fherg")]
+
+[node name="TrackEditor" parent="." index="6" instance=ExtResource("4_vllis")]
