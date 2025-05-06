@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clq23rxfbplr2"]
+
+[ext_resource type="Script" uid="uid://d3qfngcxj8yc3" path="res://addons/F00F.Vehicles/Vehicles/GodotVehicle.cs" id="1_u8nng"]
+
+[node name="GodotVehicle" type="VehicleBody3D"]
+script = ExtResource("1_u8nng")

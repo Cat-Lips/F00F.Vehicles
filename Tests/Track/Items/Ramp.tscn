@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://oxvuqmlary0k"]
+
+[ext_resource type="Script" uid="uid://cgtimtair6qiu" path="res://Tests/Track/Items/Ramp.cs" id="1_ip6ar"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ip6ar"]
+left_to_right = 2.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ip6ar"]
+data = PackedVector3Array(1.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 1.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 1.5, 0.5, 0.5, 1.5, 0.5, -0.5, 0.5, -0.5, 0.5, 1.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 1.5, 0.5, -0.5, 1.5, 0.5, 0.5, -0.5, -0.5, -0.5, 1.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Ramp" type="StaticBody3D"]
+script = ExtResource("1_ip6ar")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_ip6ar")
+skeleton = NodePath("")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_ip6ar")

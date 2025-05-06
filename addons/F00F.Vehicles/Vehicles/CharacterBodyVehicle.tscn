@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmi3chievq13"]
+
+[ext_resource type="Script" uid="uid://d10fs0ef0ak3b" path="res://addons/F00F.Vehicles/Vehicles/CharacterBodyVehicle.cs" id="1_ida0l"]
+
+[node name="CharacterBodyVehicle" type="CharacterBody3D"]
+script = ExtResource("1_ida0l")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=4 format=3 uid="uid://crqrvidouiypu"]
+
+[ext_resource type="Script" uid="uid://q8sksu3upm64" path="res://addons/F00F.Vehicles/Vehicles/RayCastVehicle.cs" id="1_ptpbh"]
+
+[node name="RayCastVehicle" type="RigidBody3D"]
+script = ExtResource("1_ptpbh")
